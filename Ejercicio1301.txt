@@ -1,0 +1,172 @@
+EJERCICIO 1301 - PREDICCIÓN DE CÓDIGO 1
+
+PREGUNTA:
+
+¿Cuál es el resultado de ejecutar el siguiente programa si
+ingresamos como datos los valores:
+
+a = 2
+b = 3
+
+def prueba(x, y):
+    print(a, b)
+    x = x + 1
+    y = y + 2
+    return (x, y)
+
+from funciones import *
+
+a = int(input("Ingrese un número entero: "))
+b = int(input("Ingrese un número entero: "))
+
+for i in range(3):
+    print(prueba(a,b))
+    a = a + 2
+    b = b + 2
+
+#LÍNEA:
+Estoy creando una función llamada "prueba".
+def prueba(x, y):
+
+La función recibe dos valores:
+x
+y
+
+#En este momento NO ejecuto las líneas que están dentro
+de la función. Solamente guardo la función para utilizarla más adelante.
+
+print(a, b)
+
+x = x + 1
+y = y + 2
+return (x, y)
+
+#No ejecuto, porque una función se ejecuta recién cuando alguien la llama.
+
+#Ahora tengo guardada la función:
+prueba(x, y)
+
+#Pero todavía no hice ninguna operación con ella.
+
+#Busco el archivo "funciones.py". Lo encuentro. Traigo la función "prueba" para poder utilizarla
+desde "programa.py". Esto NO significa que las variables "a" y "b" de
+"programa.py" aparezcan mágicamente dentro de
+"funciones.py".
+
+from funciones import *
+
+#Le pido al usuario un número. El ejercicio dice que ingresamos: 2
+a = int(input("Ingrese un número entero: ")) 
+a = 2
+
+#Le pido al usuario otro numero. El ejercicio dice que ingresamos: 3
+b = int(input("Ingrese un número entero: "))
+b = 3
+
+En este momento tengo:
+a = 2
+b = 3
+
+#Le digo a Python que repita lo que está adentro 3 veces. Las vueltas serían:
+for i in range(3):
+
+i = 0
+i = 1
+i = 2
+
+#Por lo tanto, debería hacer 3 vueltas.
+Si aparece un error antes de terminar una vuelta,
+Python se detiene y no continúa con las siguientes.
+
+#Python comienza con:
+i = 0
+
+#Los valores son:
+a = 2
+b = 3
+
+#Los valores actuales son:
+a = 2
+b = 3
+
+#Entonces llamo a la función:
+def prueba(x, y):
+
+#Ahora sí comienzo a ejecutar las líneas que estaban
+dentro de la función.
+
+#¿Puedo ejecutarla?
+print(a, b)
+
+#NO.La función está en: funciones.py. La línea: print(a, b) busca las variables: a y b, Pero dentro de "funciones.py" NO existen esas variables.
+por que fueron creadas en: programa.py. Por lo tanto, Python busca: a dentro de "funciones.py"
+y después busca: b y tampoco la encuentra.
+Entonces Python produce un error.
+NameError: name 'a' is not defined
+Python está diciendo:
+"No conozco ninguna variable llamada a en este lugar."
+
+El programa se detiene.
+Por eso estas líneas:
+
+x = x + 1
+y = y + 2
+
+return (x, y)
+
+#NO llegan a ejecutarse.
+
+#Tampoco se ejecutan:
+a = a + 2
+b = b + 2
+
+#Y tampoco se realizan:
+SEGUNDA VUELTA
+TERCERA VUELTA
+
+#El programa tiene preparado un for para hacer: 3 vueltas
+Pero solamente comienza la: PRIMERA VUELTA, Como aparece un error dentro de esa primera vuelta,
+el programa se detiene.
+Por lo tanto: Primera vuelta: COMIENZA, pero se detiene por ERROR.
+Segunda vuelta: NO SE REALIZA.
+Tercera vuelta: NO SE REALIZA.
+
+#RESULTADO PASO POR PASO
+1. Python guarda la función "prueba".
+2. Ingresa a = 2.
+3. Ingresa b = 3.
+4. Comienza el for.
+5. Primera vuelta: i = 0.
+6. Llama a prueba(2,3).
+7. Dentro de la función x = 2 e y = 3.
+8. Llega a print(a,b).
+9. Busca "a" y "b" dentro de funciones.py.
+10. No las encuentra.
+11. Aparece NameError.
+12. El programa se detiene.
+13. No se ejecutan x = x + 1 ni y = y + 2.
+14. No se ejecutan las vueltas 2 y 3.
+
+
+Al ingresar a = 2 y b = 3, el programa comienza a
+ejecutarse y llega a la primera vuelta del for.
+
+Se llama a la función prueba(2,3), por lo que x toma
+el valor 2 e y toma el valor 3.
+
+Luego se ejecuta print(a,b), pero las variables a y b
+no existen dentro de funciones.py.
+
+Por este motivo Python genera un NameError indicando que
+la variable a no está definida.
+
+El programa se detiene en la primera vuelta y no llega
+a ejecutar las vueltas restantes.
+
+El error se produce en:
+
+print(a, b)
+
+Error:
+
+NameError: name 'a' is not defined

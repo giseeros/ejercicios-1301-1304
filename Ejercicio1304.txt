@@ -1,0 +1,184 @@
+EJERCICIO 1304 - PREDICCIÓN DE CÓDIGO 4
+PARÁMETROS VS VARIABLES GLOBALES
+
+PREGUNTA:
+Seleccioná cuál de los programas imprime correctamente:
+La media de 3 y 5 es: 4
+Analizar por qué los otros programas fallan.
+
+OPCIÓN 1
+
+# Creo una función que no recibe ningún valor.
+def escribe_media():
+
+    # Intento calcular la media usando a y b.
+    media = (a + b) / 2
+
+    # Intento mostrar a, b y el resultado.
+    print("La media de ", a, " y ", b, " es: ", media)
+
+# Importo la función desde funciones.py.
+from funciones import *
+
+# Creo a y le asigno 3.
+a = 3
+
+# Creo b y le asigno 5.
+b = 5
+
+# Llamo a la función.
+escribe_media()
+
+La función intenta usar:
+a
+b
+
+Pero a y b fueron creadas en programa.py.
+La función está en funciones.py.
+La función no recibe a ni b como parámetros.
+Por eso, cuando intenta hacer:
+
+media = (a + b) / 2
+
+Python no encuentra la variable a dentro de
+funciones.py.
+
+Aparece un error:
+NameError: name 'a' is not defined
+
+OPCIÓN 1 = INCORRECTA
+
+OPCIÓN 2
+# Creo una función que recibe dos valores.
+def escribe_media(x, y):
+
+    # Calculo la media usando x e y.
+    media = (x + y) / 2
+
+    # Intento mostrar a, b y la media.
+    print("La media de ", a, " y ", b, " es: ", media)
+
+
+# Importo la función.
+from funciones import *
+
+# Creo a y le asigno 3.
+a = 3
+
+# Creo b y le asigno 5.
+b = 5
+
+# Llamo a la función y le paso a y b.
+escribe_media(a, b)
+
+Cuando llamo:
+escribe_media(a, b)
+la función recibe correctamente:
+
+x = 3
+y = 5
+
+Entonces esta línea funciona:
+media = (x + y) / 2
+
+Hace:
+media = (3 + 5) / 2
+media = 4.0
+
+Pero después aparece:
+print("La media de ", a, " y ", b, " es: ", media)
+
+La función intenta buscar: dentro de funciones.py.
+a
+b
+No las encuentra. Por eso aparece:
+NameError: name 'a' is not defined
+
+OPCIÓN 2 = INCORRECTA
+
+OPCIÓN 3
+# Creo una función que recibe x e y.
+def calcula_media(x, y):
+
+    # Calculo la media usando los valores recibidos.
+    resultado = (x + y) / 2
+
+    # Devuelvo el resultado.
+    return resultado
+
+# Importo la función.
+from funciones import *
+
+# Creo a y le asigno 3.
+a = 3
+
+# Creo b y le asigno 5.
+b = 5
+
+# Llamo a la función usando a y b.
+print("La media de ", a, " y ", b, " es: ",
+      calcula_media(a, b))
+
+Primero:
+a = 3
+
+y:
+b = 5
+
+Después se ejecuta:
+calcula_media(a, b)
+
+Como a vale 3 y b vale 5:
+calcula_media(3, 5)
+
+La función recibe:
+x = 3
+y = 5
+
+# Calculo la media.
+resultado = (x + y) / 2
+
+Reemplazo los valores:
+resultado = (3 + 5) / 2
+
+Primero:
+3 + 5 = 8
+
+Después:
+8 / 2 = 4.0
+
+Entonces:
+resultado = 4.0
+
+SALGO DE LA FUNCIÓN
+
+El resultado vuelve al:
+print()
+
+Por lo tanto se muestra:
+La media de 3 y 5 es: 4.0
+
+No aparece ningún error.
+
+
+¿POR QUÉ LA OPCIÓN 3 ES LA CORRECTA?
+Porque los valores se pasan directamente a la función:
+calcula_media(a, b)
+
+Entonces:
+a pasa a ser x
+b pasa a ser y
+
+Con:
+a = 3
+b = 5
+
+la función recibe:
+x = 3
+y = 5
+
+Calcula:
+(3 + 5) / 2 = 4.0
+
+Y devuelve:
+4.0

@@ -1,0 +1,159 @@
+EJERCICIO 1303 - PREDICCIÓN DE CÓDIGO 3
+VALIDACIÓN Y CICLOS
+
+PREGUNTAS:
+1. ¿Cuál es el resultado con los datos del ejemplo?
+2. ¿Qué sucede si se ingresa el DNI 345678233?
+
+CÓDIGO
+# Esta función cuenta cuántos números tiene el DNI.
+def validar_dni(dni):
+
+    # Comienzo el contador en 0.
+    cantidad = 0
+
+    # Mientras el DNI todavía tenga números, sigo contando.
+    while dni != 0:
+
+        # Sumo 1 al contador.
+        cantidad = cantidad + 1
+
+        # Quito el último número del DNI.
+        dni = dni // 10
+
+    # Devuelvo True si tiene exactamente 8 números.
+    return cantidad == 8
+
+# Importo la función validar_dni.
+from funciones import *
+
+# Empiezo la edad mayor con 1.
+mayor = 1
+
+# Pido un DNI.
+dni = int(input("DNI: "))
+
+# Repito mientras el DNI no sea 0.
+while dni != 0:
+
+    # Compruebo si el DNI tiene 8 números.
+    if validar_dni(dni):
+        # Si es válido, pido el nombre.
+        nombre = input("Nombre: ")
+
+        # Pido la edad.
+        edad = int(input("Edad: "))
+
+        # Comparo la edad con la mayor registrada.
+        if edad > mayor:
+            # Si es mayor, guardo esa edad.
+            mayor = edad
+
+            # También guardo el nombre.
+            nombre_mayor = nombre
+
+    # Si el DNI no tiene 8 números...
+    else:
+        # Aviso que el DNI es inválido.
+        print("DNI inválido. Vuelva a ingresar.")
+
+    # Pido otro DNI.
+    dni = int(input("DNI: "))
+
+# Cuando se ingresa 0, termina el ciclo.
+print("Nombre de la persona mayor:", nombre_mayor)
+
+Primer DNI: 34567890
+Nombre: Maria Gimenez
+Edad: 18
+
+Segundo DNI: 29907678
+Nombre: Carlos Alberto Sanchez
+Edad: 21
+
+Para terminar se ingresa: 0
+
+PRIMERA VUELTA
+# Se ingresa el DNI 34567890.
+dni = 34567890
+
+# La función cuenta sus números.
+# Tiene 8 números.
+
+# validar_dni devuelve True.
+
+# Como el DNI es válido, pide:
+nombre = Maria Gimenez
+edad = 18
+
+# Compara:
+18 > 1
+
+# Es verdadero, entonces guarda:
+mayor = 18
+nombre_mayor = Maria Gimenez
+
+SEGUNDA VUELTA
+# Se ingresa:
+dni = 29907678
+
+# La función cuenta sus números.
+# Tiene 8 números.
+
+# validar_dni devuelve True.
+
+# Pide:
+nombre = Carlos Alberto Sanchez
+edad = 21
+
+# Compara:
+21 > 18
+
+# Es verdadero, entonces cambia:
+mayor = 21
+nombre_mayor = Carlos Alberto Sanchez
+
+TERCERA VUELTA
+# Se ingresa:
+dni = 0
+
+# La condición dice:
+while dni != 0
+
+# Como dni es 0, la condición es falsa.
+
+# El ciclo termina.
+
+
+El programa muestra:
+Nombre de la persona mayor: Carlos Alberto Sanchez
+
+¿Qué sucede si se ingresa:
+345678233
+# Este DNI tiene 9 números.
+La función comienza a contarlos:
+
+345678233
+34567823
+3456782
+345678
+34567
+3456
+345
+34
+3
+0
+# El contador llega a 9. Por lo tanto:
+cantidad == 8
+es FALSO.
+
+La función devuelve:
+False
+
+¿QUÉ HACE EL PROGRAMA?
+Como validar_dni devuelve False, NO entra en:
+if validar_dni(dni):
+
+Por lo tanto NO pide: nombre, edad
+Entra en else y muestra: DNI inválido. Vuelva a ingresar.
+Después vuelve a pedir otro DNI.

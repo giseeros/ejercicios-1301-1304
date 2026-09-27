@@ -1,0 +1,110 @@
+EJERCICIO 1302 - PREDICCIÓN DE CÓDIGO 2
+SCOPE Y RETORNOS
+PREGUNTA:
+¿Con qué valores quedan a y b si ingresamos a = 2 y b = 3?
+
+# Creo una función llamada prueba que recibe a y b.
+def prueba(a, b):
+
+    # Aumento el valor de a en 1.
+    a = a + 1
+
+    # Aumento el valor de b en 2.
+    b = b + 2
+
+    # Devuelvo los nuevos valores de a y b.
+    return (a, b)
+
+
+PROGRAMA.PY
+
+# Traigo la función prueba para poder usarla.
+from funciones import *
+
+# Pido el primer número y lo guardo en a.
+a = int(input("Ingrese un numero entero: "))
+
+# Pido el segundo número y lo guardo en b.
+b = int(input("Ingrese un numero entero: "))
+
+PRIMERA VUELTA
+# Repito el bloque 3 veces.
+for i in range(3):
+
+    # Llamo a la función con a = 2 y b = 3.
+    a, b = prueba(a, b)
+
+    # Dentro de la función:
+    # a = 2 + 1 = 3
+    # b = 3 + 2 = 5
+    # La función devuelve (3, 5).
+
+    # Ahora a recibe 3 y b recibe 5.
+
+    # Aumento a en 2.
+    a = a + 2
+    # a = 3 + 2 = 5
+
+    # Aumento b en 2.
+    b = b + 2
+    # b = 5 + 2 = 7
+
+# FIN DE LA PRIMERA VUELTA
+# a = 5
+# b = 7
+
+SEGUNDA VUELTA
+# Llamo a la función con a = 5 y b = 7.
+a, b = prueba(a, b)
+
+# Dentro de la función:
+# a = 5 + 1 = 6
+# b = 7 + 2 = 9
+# La función devuelve (6, 9).
+
+# Ahora:
+# a = 6
+# b = 9
+
+# Aumento a en 2.
+a = a + 2
+# a = 6 + 2 = 8
+
+# Aumento b en 2.
+b = b + 2
+# b = 9 + 2 = 11
+
+# FIN DE LA SEGUNDA VUELTA
+# a = 8
+# b = 11
+
+TERCERA VUELTA
+# Llamo a la función con a = 8 y b = 11.
+a, b = prueba(a, b)
+
+# Dentro de la función:
+# a = 8 + 1 = 9
+# b = 11 + 2 = 13
+# La función devuelve (9, 13).
+
+# Ahora:
+# a = 9
+# b = 13
+
+# Aumento a en 2.
+a = a + 2
+# a = 9 + 2 = 11
+
+# Aumento b en 2.
+b = b + 2
+# b = 13 + 2 = 15
+
+# FIN DE LA TERCERA VUELTA
+# a = 11
+# b = 15
+
+No hay error.
+La función recibe correctamente a y b
+y devuelve los dos valores.
+a = 11
+b = 15
